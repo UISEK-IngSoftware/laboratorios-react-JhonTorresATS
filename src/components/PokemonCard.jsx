@@ -1,12 +1,17 @@
 import { Card, CardMedia, CardContent, Typography, CardActions, Button } from '@mui/material';
 import "./PokemonCard.css";
 
+
 export default function PokemonCard({ pokemon }) {
+    const mediaUrl = import.meta.env.VITE_MEDIA_URL;
+    // Construir la URL completa de la imagen usando template literals
+    const imageUrl = `${mediaUrl}/${pokemon.picture}`;
+
     return (
         <Card>
             <CardMedia
                 component="img"
-                image={pokemon.image}
+                image={imageUrl}
                 alt={pokemon.name}
                 height="200"
             />
